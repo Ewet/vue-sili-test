@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    index
+    test
     <router-view/>
   </div>
 </template>
