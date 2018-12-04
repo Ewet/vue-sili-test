@@ -13,7 +13,7 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/pages/index/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -27,6 +27,12 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'pages': resolve('src/pages'),
+      'store': resolve('src/store'),
+      'assets': resolve('src/assets'),
+      'views': resolve('src/views'),
+      'mixins': resolve('src/mixins'),
+      'components': resolve('src/components'),
     }
   },
   module: {
