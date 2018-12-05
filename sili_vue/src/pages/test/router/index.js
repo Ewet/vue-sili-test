@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Render from 'views/test/Render'
+import Render from '@/views/test/Render'
 
 
 Vue.use(Router)
