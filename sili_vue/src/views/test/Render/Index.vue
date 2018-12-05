@@ -13,6 +13,9 @@
            return {
 
            }
+       },
+       mounted () {
+           
        }
    }
 </script>

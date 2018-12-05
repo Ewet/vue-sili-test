@@ -34,6 +34,8 @@ module.exports = {
       'views': resolve('src/views'),
       'mixins': resolve('src/mixins'),
       'components': resolve('src/components'),
+      'index': resolve('src/views/index'),
+      'test': resolve('src/views/test'),
     }
   },
   module: {
