@@ -2,7 +2,7 @@
     <div class="layout">
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark" active-name="1">
+                <!-- <Menu mode="horizontal" theme="dark" active-name="1">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
                         <MenuItem name="1">
@@ -22,7 +22,7 @@
                             Item 4
                         </MenuItem>
                     </div>
-                </Menu>
+                </Menu> -->
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">

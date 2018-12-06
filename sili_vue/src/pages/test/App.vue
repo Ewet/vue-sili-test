@@ -22,4 +22,16 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+h2{
+  color: #333;
+  font-size: 20px;
+}
+h3{
+  color: #333;
+  font-size: 18px;
+}
+h4{
+  color: #333;
+  font-size: 16px;
+}
 </style>

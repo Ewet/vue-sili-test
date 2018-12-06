@@ -2,7 +2,7 @@
     <div class="layout">
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark" active-name="1">
+                <!-- <Menu mode="horizontal" theme="dark" active-name="1">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
                         <MenuItem name="1">
@@ -22,24 +22,26 @@
                             Item 4
                         </MenuItem>
                     </div>
-                </Menu>
+                </Menu> -->
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu :accordion="true" :active-name='active' @on-select="route" theme="light" width="auto" :open-names="menus">
+                    <Menu ref="menu" :accordion="true" :active-name='active' @on-select="route" theme="light" width="auto" :open-names="menus">
+                        <!-- name 从1开始，0识别不了 -->
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
                                 render
                             </template>
-                            <MenuItem name="1-1" to="/render">render 使用</MenuItem>
+                            <MenuItem name="render">render 使用</MenuItem>
                         </Submenu>
                         <Submenu name="2">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
                                 vue-route
                             </template>
-                            <MenuItem name="2-1" to="/query/456">路由参数问题</MenuItem>
+                            <MenuItem name="attribute">路由的跳转和传参</MenuItem>
+                            <!-- <MenuItem name="query">路由</MenuItem> -->
                         </Submenu>
                     </Menu>
                 </Sider>
@@ -57,22 +59,26 @@
 </template>
 <script>
     export default {
+        props: {
+            menus: {
+                type: Array,
+                default: () => ['2']
+            }
+        },
         data() {
             return {
-                active: '1-1',
-                menus: this.$route.meta.rout.substring(0,1).split(),
+                active: ''
             }
         },
         mounted(){
-            this.active = this.$route.meta.rout;
+            this.active = this.$route.name;
         },
         methods:{
             route(name){
-                // this.$router.push({path: '/'+name});
+                this.$router.push({
+                    path: '/'+name
+                });
             }
-        },
-        computed:{
-            // 路由加载之前请求
         }
     }
 </script>
