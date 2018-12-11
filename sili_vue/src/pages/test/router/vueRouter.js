@@ -9,43 +9,40 @@ export default [
       name: 'attribute',
       meta: ['2'],
       component: () => import('test/VueRouter/Attribute'),
+      // 要注意，以 / 开头的嵌套路径会被当作根路径。 这让你充分的使用嵌套组件而无须设置嵌套的路径。
+        
       children: [
         {
-          path: '/attribute/name',
+          path: 'name',
           name: 'name',
-          meta: ['2'],
           components: {
             turn: Name
           }
         },
         {
-          path: '/attribute/user',
+          path: 'user',
           name: 'user',
-          meta: ['2'],
           components: {
             turn: User
           }
         },
         {
-          path: '/attribute/query',
+          path: 'query',
           name: 'query',
-          meta: ['2'],
           components: {
             query: Query
           }
         },
         {
-          path: '/attribute/params',
+          path: 'params',
           name: 'params',
-          meta: ['2'],
           components: {
             query: Params
           }
         },
         {
-          path: '/attribute/paramsTwo/:id',
+          path: 'paramsTwo/:id',
           name: 'paramsTwo',
-          meta: ['2'],
           components: {
             query: ParamsTwo
           }

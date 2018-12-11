@@ -2,16 +2,16 @@
     <div class="layout">
         <Layout>
             <Header>
-                <!-- <Menu mode="horizontal" theme="dark" active-name="1">
+                <Menu mode="horizontal" theme="dark" active-name="1">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
                         <MenuItem name="1">
-                            <Icon type="ios-navigate"></Icon>
+                            <Icon type="ios-navigate" :to="{path: '/index.html'}"></Icon>
                             API
                         </MenuItem>
                         <MenuItem name="2">
                             <Icon type="ios-keypad"></Icon>
-                            TEST
+                            测试
                         </MenuItem>
                         <MenuItem name="3">
                             <Icon type="ios-analytics"></Icon>
@@ -22,7 +22,7 @@
                             Item 4
                         </MenuItem>
                     </div>
-                </Menu> -->
+                </Menu>
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
@@ -67,11 +67,8 @@
         },
         data() {
             return {
-                active: ''
+                active: this.$route.name
             }
-        },
-        mounted(){
-            this.active = this.$route.name;
         },
         methods:{
             route(name){

@@ -1,7 +1,9 @@
 <template>
+<transition name="fade">
    <div class="page">
        render
    </div>
+</transition>
 </template>
 
 <script>
