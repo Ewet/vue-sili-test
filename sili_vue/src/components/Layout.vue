@@ -2,57 +2,83 @@
     <div class="layout">
         <Layout>
             <Header>
-                <!-- <Menu mode="horizontal" theme="dark" active-name="1">
+                <Menu mode="horizontal" theme="dark" active-name="0"  @on-select="goPage">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <MenuItem name="1">
+                        <MenuItem v-for="(item, index) in menuList" :name="(index)" :key="index+'m'" >
                             <Icon type="ios-navigate"></Icon>
-                            API
-                        </MenuItem>
-                        <MenuItem name="2">
-                            <Icon type="ios-keypad"></Icon>
-                            TEST
-                        </MenuItem>
-                        <MenuItem name="3">
-                            <Icon type="ios-analytics"></Icon>
-                            WORK
-                        </MenuItem>
-                        <MenuItem name="4">
-                            <Icon type="ios-paper"></Icon>
-                            Item 4
+                            {{item.name}}
                         </MenuItem>
                     </div>
-                </Menu> -->
+                </Menu>
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu active-name="1-1" theme="light" width="auto" :open-names="['1']">
+                    <Menu ref="menu" :accordion="true" :active-name='active' @on-select="route" theme="light" width="auto" :open-names="menus">
+                        <!-- name 从1开始，0识别不了 -->
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
-                                vue
+                                基本框架
                             </template>
-                            <MenuItem name="1-1">文档</MenuItem>
-                            <MenuItem name="1-2">问题</MenuItem>
-                            <MenuItem name="1-3">解决</MenuItem>
+                        </Submenu>
+                        <Submenu name="2">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                工作便利
+                            </template>
+                            <!-- <MenuItem name="Attribute">路由的跳转和传参</MenuItem> -->
+                        </Submenu>
+                        <Submenu name="3">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                常用插件
+                            </template>
+                            <!-- <MenuItem name="Attribute">路由的跳转和传参</MenuItem> -->
                         </Submenu>
                     </Menu>
                 </Sider>
-                <Layout :style="{padding: '0 24px 24px'}">
-                    <Breadcrumb>
-                        <BreadcrumbItem>文档</BreadcrumbItem>
-                    </Breadcrumb>
-                    <Content>
-                        Content
+                <Layout :style="{padding: '24px'}">
+                    <Content style="height: 680px;">
+                        <Card style="height: 100%;">
+                            <router-view/>
+                        </Card>
                     </Content>
                 </Layout>
             </Layout>
+            <Footer class="layout-footer-center">Ewet &copy; Test</Footer>
         </Layout>
     </div>
 </template>
 <script>
     export default {
-        
+        props: {
+            menus: {
+                type: Array,
+                default: () => ['2']
+            }
+        },
+        data() {
+            return {
+                active: this.$route.name,
+                menuList: [
+                    {name: 'API', url: 'index.html'},
+                    {name: 'TEST', url: 'test.html'},
+                    {name: 'API', url: 'index.html'},
+                    {name: 'API', url: 'index.html'},
+                ]
+            }
+        },
+        methods:{
+            route(name){
+                this.$router.push({
+                    name: name
+                });
+            },
+            goPage (name) {
+                location.href = this.menuList[name].url;
+            }
+        }
     }
 </script>
 <style scoped>
@@ -77,5 +103,10 @@
     width: 420px;
     margin: 0 auto;
     margin-right: 20px;
+}
+.layout-footer-center{
+    text-align: center;
+    background: #515a6e;
+    color: #fff;
 }
 </style>

@@ -4,15 +4,21 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import iView from 'iview';
+import store from '@/store'
 import 'iview/dist/styles/iview.css';
+// 导航守卫
+import routerFormat from 'utils/routerFormat';
+routerFormat(router)
 
 Vue.use(iView);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+// 创建和挂载根实例
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

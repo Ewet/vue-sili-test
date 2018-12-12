@@ -5,10 +5,12 @@ Vue.use(Router)
 import vueRouter from './vueRouter';
 import render from './render';
 
-
+// 创建 router 实例
 export default new Router({
   routes: [
     ...render,
     ...vueRouter
   ]
+
 })
+

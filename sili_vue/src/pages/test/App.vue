@@ -12,7 +12,7 @@ export default {
     Index
   },
   mounted () {
-    console.log(this.$route.meta)
+    // console.log(this.$route.meta)
   }
 }
 </script>

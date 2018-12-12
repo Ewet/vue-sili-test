@@ -2,24 +2,12 @@
     <div class="layout">
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark" active-name="1">
+                <Menu mode="horizontal" theme="dark" active-name="1"  @on-select="goPage">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <MenuItem name="1">
-                            <Icon type="ios-navigate" :to="{path: '/index.html'}"></Icon>
-                            API
-                        </MenuItem>
-                        <MenuItem name="2">
-                            <Icon type="ios-keypad"></Icon>
-                            测试
-                        </MenuItem>
-                        <MenuItem name="3">
-                            <Icon type="ios-analytics"></Icon>
-                            WORK
-                        </MenuItem>
-                        <MenuItem name="4">
-                            <Icon type="ios-paper"></Icon>
-                            Item 4
+                        <MenuItem v-for="(item, index) in menuList" :name="(index)" :key="index+'m'" >
+                            <Icon type="ios-navigate"></Icon>
+                            {{item.name}}
                         </MenuItem>
                     </div>
                 </Menu>
@@ -33,21 +21,22 @@
                                 <Icon type="ios-navigate"></Icon>
                                 render
                             </template>
-                            <MenuItem name="render">render 使用</MenuItem>
+                            <MenuItem name="Render">render 使用</MenuItem>
                         </Submenu>
                         <Submenu name="2">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
                                 vue-route
                             </template>
-                            <MenuItem name="attribute">路由的跳转和传参</MenuItem>
+                            <MenuItem name="Attribute">路由的跳转和传参</MenuItem>
+                            <MenuItem name="NavigationGuard">导航守卫</MenuItem>
                             <!-- <MenuItem name="query">路由</MenuItem> -->
                         </Submenu>
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '24px'}">
                     <Content style="height: 680px;">
-                        <Card style="height: 100%;">
+                        <Card style="height: 100%;overflow-y: auto;">
                             <router-view/>
                         </Card>
                     </Content>
@@ -62,19 +51,29 @@
         props: {
             menus: {
                 type: Array,
-                default: () => ['2']
+                default: () => ['1']
             }
         },
         data() {
             return {
-                active: this.$route.name
+                active: this.$route.name,
+                menuList: [
+                    {name: 'API', url: 'index.html'},
+                    {name: 'TEST', url: 'test.html'},
+                    {name: 'API', url: 'index.html'},
+                    {name: 'API', url: 'index.html'},
+                ]
             }
         },
         methods:{
             route(name){
                 this.$router.push({
-                    path: '/'+name
+                    name: name
                 });
+            },
+            goPage (name) {
+                console.log(name)
+                location.href = this.menuList[name].url;
             }
         }
     }

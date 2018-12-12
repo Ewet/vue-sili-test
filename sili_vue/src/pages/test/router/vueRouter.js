@@ -3,10 +3,11 @@ const Params = { template: '<div>Params one</div>' }
 const Query = { template: '<div>Query</div>' }
 const Name = { template: '<div>name</div>' }
 const User = { template: '<div>user</div>' }
+// 配置路由
 export default [
     {
       path: '/attribute',
-      name: 'attribute',
+      name: 'Attribute',
       meta: ['2'],
       component: () => import('test/VueRouter/Attribute'),
       // 要注意，以 / 开头的嵌套路径会被当作根路径。 这让你充分的使用嵌套组件而无须设置嵌套的路径。
@@ -14,14 +15,14 @@ export default [
       children: [
         {
           path: 'name',
-          name: 'name',
+          name: 'Name',
           components: {
             turn: Name
           }
         },
         {
           path: 'user',
-          name: 'user',
+          name: 'User',
           components: {
             turn: User
           }
@@ -48,5 +49,11 @@ export default [
           }
         }
       ]
+    },
+    {
+      path: '/navigation-guard',
+      name: 'NavigationGuard',
+      meta: ['2'],
+      component: () => import('test/VueRouter/NavigationGuard'),
     }
 ]

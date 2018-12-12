@@ -6,7 +6,7 @@ export default [
   },
   {
     path: '/render',
-    name: 'render',
+    name: 'Render',
     meta: ['1'],
     component: () => import('test/Render/Index')
   }
