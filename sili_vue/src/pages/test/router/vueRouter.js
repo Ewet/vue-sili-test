@@ -55,5 +55,10 @@ export default [
       name: 'NavigationGuard',
       meta: ['2'],
       component: () => import('test/VueRouter/NavigationGuard'),
+      beforeEnter: (to, from, next) => {
+        console.log('路由守卫');
+        console.log(to);
+        next()
+      }
     }
 ]
