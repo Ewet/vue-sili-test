@@ -10,7 +10,16 @@ export default new Router({
   routes: [
     ...render,
     ...vueRouter
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      console.log(15);
+      return savedPosition
+    } else {
+      console.log(16);
+      return { x: 0, y: 0 }
+    }
+  }
 
 })
 

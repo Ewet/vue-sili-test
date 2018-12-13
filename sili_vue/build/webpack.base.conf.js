@@ -49,10 +49,20 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
-        // options:{
-        //   plugins:['syntax-dynamic-import']
-        // },
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        // 路由懒加载使用插件
+        options:{
+          plugins:['syntax-dynamic-import']
+        },
+      },
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('test')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

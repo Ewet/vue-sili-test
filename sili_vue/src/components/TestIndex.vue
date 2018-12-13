@@ -30,7 +30,7 @@
                             </template>
                             <MenuItem name="Attribute">路由的跳转和传参</MenuItem>
                             <MenuItem name="NavigationGuard">导航守卫</MenuItem>
-                            <!-- <MenuItem name="query">路由</MenuItem> -->
+                            <MenuItem name="RouteLazyLoading">路由懒加载</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>

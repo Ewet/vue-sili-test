@@ -32,11 +32,16 @@
        <br>
 
        <h4>导航守卫的作用：</h4>
-       <p>1.判断登录信息：没登录全部跳到登录页。</p>
-       <p>2.判断必要操作是否进行没进行的话中断跳转</p>
+       <p>1.判断登录信息：没登录全部跳到登录页。(路由元数据)</p>
+       <p>2.判断必要操作是否进行没进行的话中断跳转</p>数据获取
+       <p>3.数据获取</p>
+       <h5>栗子:</h5>
+       <input type="text" placeholder="请输入姓名" v-model="age">
        
        <p>参考链接：<a target="_blank" href="https://www.jb51.net/article/131399.htm">https://www.jb51.net/article/131399.htm</a></p><br>
-
+    
+        <h4>滚动行为：</h4>
+        <p>当创建一个 Router 实例，你可以提供一个 scrollBehavior 方法：</p>
    </div>
 </template>
 
@@ -49,7 +54,7 @@
         },
         data() {
             return {
-
+                age: ''
             }
         },
         mounted(){
@@ -59,11 +64,16 @@
             console.log('组件守卫')
             console.log(to)
             next()
-            // 在当前路由改变，但是该组件被复用时调用
-            // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
-            // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
-            // 可以访问组件实例 `this`
         },
+        beforeRouteLeave (to, from, next) {
+            if(this.name){
+                if(confirm('您有必填项未填写，是否确定离开此页面？')){
+                    next()
+                } else {
+                    next(false);
+                }
+            }
+        }
    }
 </script>
 
