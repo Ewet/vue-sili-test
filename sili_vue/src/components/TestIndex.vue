@@ -47,36 +47,36 @@
     </div>
 </template>
 <script>
-    export default {
-        props: {
-            menus: {
-                type: Array,
-                default: () => ['1']
-            }
-        },
-        data() {
-            return {
-                active: this.$route.name,
-                menuList: [
-                    {name: 'API', url: 'index.html'},
-                    {name: 'TEST', url: 'test.html'},
-                    {name: 'API', url: 'index.html'},
-                    {name: 'API', url: 'index.html'},
-                ]
-            }
-        },
-        methods:{
-            route(name){
-                this.$router.push({
-                    name: name
-                });
-            },
-            goPage (name) {
-                console.log(name)
-                location.href = this.menuList[name].url;
-            }
-        }
+export default {
+  props: {
+    menus: {
+      type: Array,
+      default: () => ['1']
     }
+  },
+  data () {
+    return {
+      active: this.$route.name,
+      menuList: [
+        {name: 'API', url: 'index.html'},
+        {name: 'TEST', url: 'test.html'},
+        {name: 'API', url: 'index.html'},
+        {name: 'API', url: 'index.html'}
+      ]
+    };
+  },
+  methods: {
+    route (name) {
+      this.$router.push({
+        name: name
+      });
+    },
+    goPage (name) {
+      console.log(name);
+      location.href = this.menuList[name].url;
+    }
+  }
+};
 </script>
 <style scoped>
 .layout{

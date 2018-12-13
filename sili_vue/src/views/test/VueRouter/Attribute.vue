@@ -36,7 +36,7 @@
         <p>通过params传参时，在通过路由跳转时参数的类型为传过去的类型，</p>
         <p>而在跳转后的页面进行刷新是参数的类型都为字符串类型；</p>
         <router-link :to="{ name: 'paramsTwo', params:{id: 15}}">/params:console.log:{{ this.$route.params.id}}</router-link>  <br>
-        <router-link :to="{ name: 'paramsTwo', params:{id: 15}}">/params:console.log:{{ this.$route.params.id}}</router-link>  <br>        
+        <router-link :to="{ name: 'paramsTwo', params:{id: 15}}">/params:console.log:{{ this.$route.params.id}}</router-link>  <br>
 
         <router-view name="query"></router-view><br>
    </div>
@@ -44,16 +44,16 @@
 </template>
 
 <script>
-   export default {
-       name: '',
-       components: {
-       },
-       data() {
-           return {
+export default {
+  name: '',
+  components: {
+  },
+  data () {
+    return {
 
-           }
-       }
-   }
+    };
+  }
+};
 </script>
 
 <style scoped lang='less'>

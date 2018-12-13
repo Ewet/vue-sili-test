@@ -10,4 +10,4 @@ export default [
     meta: ['1'],
     component: () => import('test/Render/Index')
   }
-]
+];

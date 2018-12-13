@@ -7,19 +7,19 @@
 </template>
 
 <script>
-   export default {
-       name: '',
-       components: {
-       },
-       data() {
-           return {
+export default {
+  name: '',
+  components: {
+  },
+  data () {
+    return {
 
-           }
-       },
-       mounted () {
-           
-       }
-   }
+    };
+  },
+  mounted () {
+
+  }
+};
 </script>
 
 <style scoped lang='less'>

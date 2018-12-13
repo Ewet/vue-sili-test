@@ -8,13 +8,13 @@
 import Index from 'components/TestIndex';
 export default {
   name: 'App',
-  components:{
+  components: {
     Index
   },
   mounted () {
     // console.log(this.$route.meta)
   }
-}
+};
 </script>
 
 <style>
