@@ -1,4 +1,4 @@
-import navigationGuard from './navigationGuard'
+import navigationGuard from './navigationGuard';
 export default {
-    navigationGuard
-}
+  navigationGuard
+};

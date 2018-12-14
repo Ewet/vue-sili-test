@@ -15,16 +15,16 @@
 </template>
 
 <script>
-   export default {
-       name: 'RouteLazyLoading',
-       components: {
-       },
-       data() {
-           return {
+export default {
+  name: 'RouteLazyLoading',
+  components: {
+  },
+  data () {
+    return {
 
-           }
-       }
-   }
+    };
+  }
+};
 </script>
 
 <style scoped lang='less'>
