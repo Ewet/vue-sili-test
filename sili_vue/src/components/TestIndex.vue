@@ -32,6 +32,13 @@
                             <MenuItem name="NavigationGuard">导航守卫</MenuItem>
                             <MenuItem name="RouteLazyLoading">路由懒加载</MenuItem>
                         </Submenu>
+                        <Submenu name="3">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                浏览器请求
+                            </template>
+                            <MenuItem name="WebSocket">WebSocket</MenuItem>
+                        </Submenu>
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '24px'}">
