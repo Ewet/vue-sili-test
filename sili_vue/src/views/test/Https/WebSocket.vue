@@ -36,15 +36,6 @@ export default {
   CLOSED：值为3，表示连接已经关闭，或者打开连接失败。
 */
       console.log(ws.readyState);
-      const status = ws.readyState;
-      switch (status) {
-        case 0 :
-          console.log('正在链接中');
-          break;
-        case 1 :
-          console.log('链接成功');
-//   case 2 :
-      }
       ws.onopen = function (evt) {
         ws.send('Hello WebSockets!');
       };
