@@ -39,6 +39,20 @@
                             </template>
                             <MenuItem name="WebSocket">WebSocket</MenuItem>
                         </Submenu>
+                        <Submenu name="4">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                VueCli
+                            </template>
+                            <MenuItem name="VueCliBase">基础</MenuItem>
+                        </Submenu>
+                        <Submenu name="5">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                CSS
+                            </template>
+                            <MenuItem name="VerticalAlign">vertical-align</MenuItem>
+                        </Submenu>
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '24px'}">

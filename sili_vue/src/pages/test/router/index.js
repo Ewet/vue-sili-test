@@ -4,6 +4,9 @@ import Router from 'vue-router';
 import vueRouter from './vueRouter';
 import render from './render';
 import https from './https';
+import vueCli from './vueCli';
+import CSS from './CSS';
+
 Vue.use(Router);
 
 // 创建 router 实例
@@ -11,7 +14,9 @@ export default new Router({
   routes: [
     ...render,
     ...vueRouter,
-    ...https
+    ...https,
+    ...vueCli,
+    ...CSS
   ],
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
