@@ -4,5 +4,11 @@ export default [
     meta: ['5'],
     name: 'VerticalAlign',
     component: () => import('test/CSS/VerticalAlign')
+  },
+  {
+    path: '/background',
+    meta: ['5'],
+    name: 'Background',
+    component: () => import('test/CSS/Background')
   }
 ];

@@ -52,6 +52,7 @@
                                 CSS
                             </template>
                             <MenuItem name="VerticalAlign">vertical-align</MenuItem>
+                            <MenuItem name="Background">background</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>
