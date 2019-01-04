@@ -27,7 +27,7 @@
                                 <Icon type="ios-navigate"></Icon>
                                 工作便利
                             </template>
-                            <!-- <MenuItem name="Attribute">路由的跳转和传参</MenuItem> -->
+                            <MenuItem name="Blog">博客地址</MenuItem>
                         </Submenu>
                         <Submenu name="3">
                             <template slot="title">
