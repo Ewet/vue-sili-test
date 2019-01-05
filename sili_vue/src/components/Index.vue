@@ -27,7 +27,7 @@
                                 <Icon type="ios-navigate"></Icon>
                                 工作便利
                             </template>
-                            <MenuItem name="Blog">博客地址</MenuItem>
+                            <MenuItem name="Blog">各种链接</MenuItem>
                         </Submenu>
                         <Submenu name="3">
                             <template slot="title">

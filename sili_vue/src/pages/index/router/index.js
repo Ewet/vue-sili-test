@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/',
       meta: ['2'],
-      component: import('index/Work/Blog')
+      component: () => import('index/Work/Blog')
     },
     {
       path: '/blog',
