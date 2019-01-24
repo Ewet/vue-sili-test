@@ -10,5 +10,11 @@ export default [
     meta: ['5'],
     name: 'Background',
     component: () => import('test/CSS/Background')
+  },
+  {
+    path: '/position',
+    meta: ['5'],
+    name: 'Position',
+    component: () => import('test/CSS/Position')
   }
 ];

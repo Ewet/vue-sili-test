@@ -12,6 +12,12 @@ Vue.use(Router);
 // 创建 router 实例
 export default new Router({
   routes: [
+    {
+      path: '/Test',
+      meta: ['6'],
+      name: 'Test',
+      component: () => import('test/Test')
+    },
     ...render,
     ...vueRouter,
     ...https,

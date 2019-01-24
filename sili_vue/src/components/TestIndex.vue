@@ -53,6 +53,14 @@
                             </template>
                             <MenuItem name="VerticalAlign">vertical-align</MenuItem>
                             <MenuItem name="Background">background</MenuItem>
+                            <MenuItem name="Position">Position</MenuItem>
+                        </Submenu>
+                        <Submenu name="6">
+                            <template slot="title">
+                                <Icon type="ios-navigate"></Icon>
+                                Test
+                            </template>
+                            <MenuItem name="Test">Test</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>
