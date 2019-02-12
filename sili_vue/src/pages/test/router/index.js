@@ -1,28 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import Render from 'test/Render/Index';
 import vueRouter from './vueRouter';
 import render from './render';
 import https from './https';
 import vueCli from './vueCli';
 import CSS from './CSS';
+import test from './test';
+import javascript from './javascript';
 
 Vue.use(Router);
 
 // 创建 router 实例
 export default new Router({
   routes: [
-    {
-      path: '/Test',
-      meta: ['6'],
-      name: 'Test',
-      component: () => import('test/Test')
-    },
+    ...test,
     ...render,
     ...vueRouter,
     ...https,
     ...vueCli,
-    ...CSS
+    ...CSS,
+    ...javascript
   ],
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {

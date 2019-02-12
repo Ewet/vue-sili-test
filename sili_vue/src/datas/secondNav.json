@@ -2,10 +2,10 @@
     "secondNav": [
         {
             "id": "01",
-            "name": "render",
+            "name": "Render",
             "children": [
                 {
-                    "fatherName": "render",
+                    "fatherName": "Render",
                     "id": "0101",
                     "routerName": "Render",
                     "name": "render 使用"
@@ -14,10 +14,10 @@
         },
         {
             "id": "02",
-            "name": "vue-route",
+            "name": "Vue-route",
             "children": [
                 {
-                    "fatherName": "vue-route",
+                    "fatherName": "Vue-route",
                     "id": "0201",
                     "routerName": "Attribute",
                     "name": "路由的跳转和传参"
