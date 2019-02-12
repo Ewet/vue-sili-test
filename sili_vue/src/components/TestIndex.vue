@@ -16,51 +16,12 @@
                 <Sider hide-trigger :style="{background: '#fff'}">
                     <Menu ref="menu" :accordion="true" :active-name='active' @on-select="route" theme="light" width="auto" :open-names="menus">
                         <!-- name 从1开始，0识别不了 -->
-                        <Submenu name="1">
+                        <Submenu v-for="(item, index) in secondNav" :key="index" :name="index+1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
-                                render
+                                {{item.name}}
                             </template>
-                            <MenuItem name="Render">render 使用</MenuItem>
-                        </Submenu>
-                        <Submenu name="2">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                vue-route
-                            </template>
-                            <MenuItem name="Attribute">路由的跳转和传参</MenuItem>
-                            <MenuItem name="NavigationGuard">导航守卫</MenuItem>
-                            <MenuItem name="RouteLazyLoading">路由懒加载</MenuItem>
-                        </Submenu>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                浏览器请求
-                            </template>
-                            <MenuItem name="WebSocket">WebSocket</MenuItem>
-                        </Submenu>
-                        <Submenu name="4">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                VueCli
-                            </template>
-                            <MenuItem name="VueCliBase">基础</MenuItem>
-                        </Submenu>
-                        <Submenu name="5">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                CSS
-                            </template>
-                            <MenuItem name="VerticalAlign">vertical-align</MenuItem>
-                            <MenuItem name="Background">background</MenuItem>
-                            <MenuItem name="Position">Position</MenuItem>
-                        </Submenu>
-                        <Submenu name="6">
-                            <template slot="title">
-                                <Icon type="ios-navigate"></Icon>
-                                Test
-                            </template>
-                            <MenuItem name="Test">Test</MenuItem>
+                            <MenuItem v-for="(children, index) in item.children" :key="index+ 'c'" :name="children.routerName">{{children.name}}</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>
@@ -92,8 +53,13 @@ export default {
         {name: 'TEST', url: 'test.html'},
         {name: 'API', url: 'index.html'},
         {name: 'API', url: 'index.html'}
-      ]
+      ],
+      secondNav: []
     };
+  },
+  mounted () {
+    let dataSecondNav = require('@/datas/secondNav.json');
+    this.secondNav = dataSecondNav.secondNav;
   },
   methods: {
     route (name) {
@@ -102,7 +68,6 @@ export default {
       });
     },
     goPage (name) {
-      console.log(name);
       location.href = this.menuList[name].url;
     }
   }

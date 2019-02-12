@@ -1,0 +1,112 @@
+{
+    "secondNav": [
+        {
+            "id": "01",
+            "name": "render",
+            "children": [
+                {
+                    "fatherName": "render",
+                    "id": "0101",
+                    "routerName": "Render",
+                    "name": "render 使用"
+                }
+            ]
+        },
+        {
+            "id": "02",
+            "name": "vue-route",
+            "children": [
+                {
+                    "fatherName": "vue-route",
+                    "id": "0201",
+                    "routerName": "Attribute",
+                    "name": "路由的跳转和传参"
+                },
+                {
+                    "fatherName": "vue-route",
+                    "id": "0202",
+                    "routerName": "NavigationGuard",
+                    "name": "导航守卫"
+                },
+                {
+                    "fatherName": "vue-route",
+                    "id": "0203",
+                    "routerName": "RouteLazyLoading",
+                    "name": "路由懒加载"
+                }
+            ]
+        },
+        {
+            "id": "03",
+            "name": "浏览器请求",
+            "children": [
+                {
+                    "fatherName": "浏览器请求",
+                    "id": "0301",
+                    "routerName": "WebSocket",
+                    "name": "WebSocket"
+                }
+            ]
+        },
+        {
+            "id": "04",
+            "name": "VueCli",
+            "children": [
+                {
+                    "fatherName": "VueCli",
+                    "id": "0401",
+                    "routerName": "VueCliBase",
+                    "name": "基础"
+                }
+            ]
+        },
+        {
+            "id": "05",
+            "name": "CSS",
+            "children": [
+                {
+                    "fatherName": "CSS",
+                    "id": "0501",
+                    "routerName": "VerticalAlign",
+                    "name": "vertical-align"
+                },
+                {
+                    "fatherName": "CSS",
+                    "id": "0502",
+                    "routerName": "Background",
+                    "name": "background"
+                },
+                {
+                    "fatherName": "CSS",
+                    "id": "0503",
+                    "routerName": "Position",
+                    "name": "Position"
+                }
+            ]
+        },
+        {
+            "id": "06",
+            "name": "Test",
+            "children": [
+                {
+                    "fatherName": "Test",
+                    "id": "0601",
+                    "routerName": "Test",
+                    "name": "Test"
+                }
+            ]
+        },
+        {
+            "id": "07",
+            "name": "Javascript",
+            "children": [
+                {
+                    "fatherName": "Javascript",
+                    "id": "0701",
+                    "routerName": "Iteration",
+                    "name": "Iteration"
+                }
+            ]
+        }
+    ]
+}
