@@ -45,6 +45,12 @@
                     "id": "0301",
                     "routerName": "WebSocket",
                     "name": "WebSocket"
+                },
+                {
+                    "fatherName": "浏览器请求",
+                    "id": "0302",
+                    "routerName": "Axios",
+                    "name": "Axios"
                 }
             ]
         },
