@@ -1,37 +1,16 @@
 <template>
    <div class="page">
-       test
+       <h3>1.observable API 状态共享</h3>
+       <Observable/>
    </div>
 </template>
 
 <script>
+import Observable from './observableApi/app';
 export default {
   name: '',
   components: {
-  },
-  data () {
-    return {
-
-    };
-  },
-  mounted () {
-    this.conThis();
-  },
-  methods: {
-    conThis (e) {
-      // // var length = 10;
-      // function fn () {
-      //   console.log(this.length);
-      // }
-      // var obj = {
-      //   length: 5,
-      //   method: function (fn) {
-      //     fn();
-      //     arguments[0]();
-      //   }
-      // };
-      // obj.method(fn, 1);
-    }
+    Observable
   }
 };
 </script>
