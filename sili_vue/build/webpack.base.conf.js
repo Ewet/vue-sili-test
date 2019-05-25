@@ -3,6 +3,10 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+// 去除多余的样式插件 https://www.purgecss.com/
+const glob = require('glob')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -93,8 +97,23 @@ module.exports = {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader",
       },
+      // 去除多余的样式插件 https://www.purgecss.com/
+      // {
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: 'css-loader?sourceMap'
+      //   })
+      // }
     ]
   },
+  // 去除多余的样式插件 https://www.purgecss.com/
+  // plugins: [
+  //   new ExtractTextPlugin('[name].css?[hash]'),
+  //   new PurgecssPlugin({
+  //     paths: glob.sync(`${resolve.src}/*`)
+  //   })
+  // ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
